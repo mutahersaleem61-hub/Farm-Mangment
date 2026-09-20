@@ -1,0 +1,32 @@
+{
+  "name": "Muhammad Ahmad — Kisan Khata",
+  "short_name": "M. Ahmad Khata",
+  "description": "Muhammad Ahmad ke farm ka pura hisaab kitab — fasal, kharcha, aamdani, zakheera aur janwar, sab ek jagah.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2E7D4F",
+  "lang": "ur-Latn",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

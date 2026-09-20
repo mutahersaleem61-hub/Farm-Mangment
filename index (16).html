@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Muhammad Ahmad — Kisan Khata</title>
+<meta name="description" content="Muhammad Ahmad ke farm ka pura hisaab kitab — fasal, kharcha, aamdani, zakheera aur janwar, sab ek jagah.">
+<meta name="theme-color" content="#2E7D4F">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="M. Ahmad Khata">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-2: #EAF7EE;
+    --ink: #1E2B22;
+    --ink-soft: #5C6B60;
+    --forest: #2E7D4F;
+    --forest-2: #3F9863;
+    --gold: #4C9A6A;
+    --gold-soft: #DCF3E3;
+    --brick: #C0392B;
+    --brick-soft: #FBE6E2;
+    --line: #D9EDDD;
+    --shadow: rgba(46, 125, 79, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { min-height: 100vh; }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 18px 90px; }
+
+  header.top {
+    background: var(--forest);
+    color: #F3EFDD;
+    padding: 22px 18px 20px;
+    border-bottom: 4px double var(--gold);
+  }
+  header.top .inner {
+    max-width: 980px; margin: 0 auto;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  header.top h1 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+  header.top .tag {
+    font-size: 0.85rem;
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: 4px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 14px 18px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav.tabs::-webkit-scrollbar { display: none; }
+  nav.tabs button {
+    flex: 0 0 auto;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-bottom: none;
+    color: var(--ink-soft);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  nav.tabs button.active {
+    background: var(--surface);
+    color: var(--forest-2);
+    font-weight: 600;
+    border-color: var(--line);
+    box-shadow: 0 -2px 0 var(--gold) inset;
+  }
+
+  main.page {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 0 10px 10px 10px;
+    padding: 22px;
+    box-shadow: 0 6px 18px var(--shadow);
+  }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  h2.section-title {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0 0 4px;
+    color: var(--forest-2);
+  }
+  p.section-sub {
+    margin: 0 0 18px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  /* Dashboard cards */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .card .label { font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 6px; }
+  .card .value { font-family: 'IBM Plex Mono', monospace; font-size: 1.35rem; font-weight: 600; }
+  .card.income .value { color: var(--forest-2); }
+  .card.expense .value { color: var(--brick); }
+  .card.profit .value.pos { color: var(--forest-2); }
+  .card.profit .value.neg { color: var(--brick); }
+
+  .subblock-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 22px 0 10px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+  }
+
+  .alert-list { display: flex; flex-direction: column; gap: 6px; }
+  .alert-row {
+    display: flex; justify-content: space-between; gap: 10px;
+    background: var(--brick-soft);
+    border: 1px solid var(--brick);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+  .alert-row .qty { font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: var(--brick); }
+
+  /* Forms */
+  form.entry-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+  form.entry-form .field { display: flex; flex-direction: column; gap: 4px; }
+  form.entry-form .field.full { grid-column: 1 / -1; }
+  form.entry-form label { font-size: 0.78rem; color: var(--ink-soft); }
+  form.entry-form input, form.entry-form select, form.entry-form textarea {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  form.entry-form textarea { resize: vertical; min-height: 38px; }
+  form.entry-form input:focus, form.entry-form select:focus, form.entry-form textarea:focus {
+    outline: 2px solid var(--forest-2);
+    outline-offset: 1px;
+  }
+  .btn {
+    background: var(--forest);
+    color: #F3EFDD;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: end;
+  }
+  .btn:hover { background: var(--forest-2); }
+  .btn.danger { background: var(--brick); }
+  .btn.small { padding: 5px 10px; font-size: 0.78rem; }
+  .btn.ghost {
+    background: transparent;
+    color: var(--forest-2);
+    border: 1px solid var(--forest-2);
+  }
+
+  /* Entry lists as ledger rows */
+  .ledger {
+    border-top: 1px solid var(--line);
+  }
+  .ledger-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--line);
+    background-image: repeating-linear-gradient(transparent, transparent 100%);
+  }
+  .ledger-row .main { flex: 1; min-width: 0; }
+  .ledger-row .name { font-weight: 600; font-size: 0.95rem; }
+  .ledger-row .meta { font-size: 0.8rem; color: var(--ink-soft); margin-top: 2px; }
+  .ledger-row .note { font-size: 0.82rem; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+  .ledger-row .amount { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 1rem; white-space: nowrap; }
+  .ledger-row .amount.income { color: var(--forest-2); }
+  .ledger-row .amount.expense { color: var(--brick); }
+  .ledger-row .actions { display: flex; gap: 6px; margin-left: 10px; }
+
+  .status-pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--gold-soft);
+    color: var(--forest);
+    font-weight: 600;
+    margin-left: 6px;
+  }
+
+  .empty-state {
+    padding: 30px 10px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+  }
+
+  footer.note {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 640px) {
+    header.top h1 { font-size: 1.35rem; }
+    main.page { padding: 16px; border-radius: 8px; }
+    .ledger-row { flex-direction: column; }
+    .ledger-row .actions { margin-left: 0; margin-top: 8px; }
+  }
+
+  .print-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 0 0;
+  }
+
+  .crop-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+  }
+  .crop-summary-table th, .crop-summary-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .crop-summary-table th {
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+  .crop-summary-table td.num, .crop-summary-table th.num { font-family: 'IBM Plex Mono', monospace; text-align: right; }
+  .crop-summary-table td.profit-pos { color: var(--forest-2); font-weight: 600; }
+  .crop-summary-table td.profit-neg { color: var(--brick); font-weight: 600; }
+
+  .history-filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .history-filter label { font-size: 0.82rem; color: var(--ink-soft); }
+  .history-filter select {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 7px 10px;
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.88rem;
+  }
+
+  .history-group {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    break-inside: avoid;
+  }
+  .history-group-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--surface-2);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .history-group-head .crop-name {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--forest-2);
+  }
+  .history-group-head .crop-totals {
+    display: flex;
+    gap: 14px;
+    font-size: 0.8rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .history-group-head .crop-totals span.k { color: var(--brick); }
+  .history-group-head .crop-totals span.a { color: var(--forest-2); }
+  .history-group-body { padding: 4px 16px; }
+  .history-group-body .ledger-row:last-child { border-bottom: none; }
+  .history-group-body .empty-state { border: none; padding: 16px 0; }
+  .table-scroll { overflow-x: auto; padding-bottom: 4px; }
+  .history-table { min-width: 480px; margin-bottom: 6px; }
+  .history-table td .note { color: var(--ink-soft); font-style: italic; font-size: 0.8rem; }
+
+  .crop-block {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .crop-block .ledger-row { border-bottom: none; padding-bottom: 4px; }
+
+  .crop-plan {
+    margin-top: 6px;
+    padding: 10px 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .crop-plan-title {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .crop-plan-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .crop-plan-form input, .crop-plan-form select {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 0.82rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--ink);
+  }
+  .crop-plan-form .plan-title { flex: 1 1 180px; }
+  .sales-summary {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .task-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 2px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.86rem;
+  }
+  .task-row:last-child { border-bottom: none; }
+  .task-row.done .task-main strong { text-decoration: line-through; color: var(--ink-soft); }
+  .task-row input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--forest-2); flex-shrink: 0; }
+  .task-row .task-main { flex: 1; min-width: 0; }
+  .task-row .task-main .note { margin-top: 2px; }
+  .task-date-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .task-date-badge.overdue { background: var(--brick); color: #fff; }
+  .task-date-badge.today { background: var(--brick-soft); color: var(--brick); }
+  .task-date-badge.soon { background: var(--gold-soft); color: var(--forest); }
+  .task-date-badge.later { background: var(--surface); color: var(--ink-soft); border: 1px solid var(--line); }
+
+  #db-upcoming-tasks .task-row { align-items: center; }
+  #db-upcoming-tasks .task-row .task-main { font-size: 0.92rem; }
+
+  @media print {
+    body { background: #fff; }
+    .print-bar, nav.tabs, form.entry-form, .actions, footer.note, .history-filter { display: none !important; }
+    header.top { border-bottom: 3px double #999; }
+    .section { display: none !important; }
+    .section.active { display: block !important; }
+    main.page { box-shadow: none; border: none; padding: 0; }
+    .wrap { max-width: 100%; padding: 0; }
+    .ledger-row, .card, .alert-row, .history-table tr { break-inside: avoid; }
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    background: var(--forest);
+    color: #F3EFDD;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    box-shadow: 0 8px 22px var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 300;
+    max-width: 90%;
+    text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @media print { .toast { display: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div>
+      <h1>🌾 Muhammad Ahmad</h1>
+      <div class="tag">Kisan Khata — Farm ka pura hisaab, ek jagah</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="dashboard" class="active">Khulasa</button>
+  <button data-tab="crops">Fasal</button>
+  <button data-tab="inputs">Khaad o Sprai</button>
+  <button data-tab="labour">Tractor o Mazdoori</button>
+  <button data-tab="finance">Hisab Kitab</button>
+  <button data-tab="inventory">Zakheera</button>
+  <button data-tab="livestock">Janwar</button>
+  <button data-tab="history">Tareekh (History)</button>
+</nav>
+
+<div class="wrap">
+<div class="print-bar">
+  <button class="btn ghost small" id="btn-print" type="button">🖨️ Print Karein</button>
+</div>
+<main class="page">
+
+  <!-- DASHBOARD -->
+  <section class="section active" id="sec-dashboard">
+    <h2 class="section-title">Khulasa</h2>
+    <p class="section-sub">Aapki poori zameen ki ek nazar mein tasveer.</p>
+    <div class="cards">
+      <div class="card income"><div class="label">Kul Amdani</div><div class="value" id="db-income">Rs 0</div></div>
+      <div class="card expense"><div class="label">Kul Kharcha (Khaad/Sprai/Tractor/Mazdoori sameet)</div><div class="value" id="db-expense">Rs 0</div></div>
+      <div class="card profit"><div class="label">Munafa</div><div class="value" id="db-profit">Rs 0</div></div>
+      <div class="card"><div class="label">Chalu Fasalain</div><div class="value" id="db-crops">0</div></div>
+      <div class="card"><div class="label">Kul Janwar</div><div class="value" id="db-livestock">0</div></div>
+      <div class="card"><div class="label">Zakheera Items</div><div class="value" id="db-inventory">0</div></div>
+    </div>
+
+    <div class="subblock-title">📅 Agle 2 Din Ka Kaam</div>
+    <div id="db-upcoming-tasks"></div>
+
+    <div class="subblock-title">Kam Stock — Dhyan Dein</div>
+    <div class="alert-list" id="db-lowstock"></div>
+
+    <div class="subblock-title">Har Fasal ka Alag Hisab</div>
+    <div id="db-crop-summary"></div>
+
+    <div class="subblock-title">Halia Andraj (Recent)</div>
+    <div class="ledger" id="db-recent"></div>
+  </section>
+
+  <!-- CROPS -->
+  <section class="section" id="sec-crops">
+    <h2 class="section-title">Fasal (Crops)</h2>
+    <p class="section-sub">Har fasal ki bijai se katai tak tafseel darj karein.</p>
+    <form class="entry-form" id="form-crop">
+      <div class="field"><label>Fasal ka naam</label><input type="text" name="name" placeholder="Jaise: Gandum, Kapas" required></div>
+      <div class="field"><label>Rakba (Acre)</label><input type="number" step="0.1" min="0" name="area" placeholder="5"></div>
+      <div class="field"><label>Bijai ki tareekh</label><input type="date" name="sowDate"></div>
+      <div class="field"><label>Andazan katai</label><input type="date" name="harvestDate"></div>
+      <div class="field">
+        <label>Halat</label>
+        <select name="status">
+          <option>Bo di gayi</option>
+          <option>Ug rahi hai</option>
+          <option>Taiyar</option>
+          <option>Kat li gayi</option>
+        </select>
+      </div>
+      <div class="field full"><label>Note</label><textarea name="note" placeholder="Extra tafseel..."></textarea></div>
+      <button type="submit" class="btn">Fasal Shamil Karein</button>
+    </form>
+    <div class="ledger" id="list-crops"></div>
+  </section>
+
+  <!-- FERTILIZER / NUTRIENT / SPRAY -->
+  <section class="section" id="sec-inputs">
+    <h2 class="section-title">Khaad, Nutrient aur Sprai</h2>
+    <p class="section-sub">Har khaad, nutrient ya sprai ka istemaal, miqdar aur qeemat darj karein — total kharcha khud ban jayega.</p>
+
+    <div class="cards" style="margin-bottom:18px;">
+      <div class="card expense"><div class="label">Kul Khaad/Sprai Kharcha</div><div class="value" id="inputs-total">Rs 0</div></div>
+      <div class="card"><div class="label">Kul Andraj</div><div class="value" id="inputs-count">0</div></div>
+    </div>
+
+    <form class="entry-form" id="form-input">
+      <div class="field"><label>Naam</label><input type="text" name="name" placeholder="Jaise: DAP, Urea, NPK, Mancozeb" required></div>
+      <div class="field">
+        <label>Qisam</label>
+        <select name="type">
+          <option>Khaad (Fertilizer)</option>
+          <option>Nutrient</option>
+          <option>Sprai (Pesticide)</option>
+        </select>
+      </div>
+      <div class="field"><label>Fasal (agar maloom ho)</label>
+        <select name="crop" id="input-crop-select">
+          <option value="">— Farm-wide / General —</option>
+        </select>
+      </div>
+      <div class="field"><label>Miqdar</label><input type="number" min="0" step="0.1" name="qty" required></div>
+      <div class="field">
+        <label>Unit</label>
+        <select name="unit">
+          <option>Kg</option>
+          <option>Bora</option>
+          <option>Litre</option>
+          <option>Adad</option>
+        </select>
+      </div>
+      <div class="field"><label>Fi Unit Qeemat (Rs)</label><input type="number" min="0" step="1" name="price" required></div>
+      <div class="field"><label>Tareekh</label><input type="date" name="date"></div>
+      <div class="field full"><label>Note</label><input type="text" name="note" placeholder="Extra tafseel..."></div>
+      <button type="submit" class="btn">Andraj Shamil Karein</button>
+    </form>
+    <div class="ledger" id="list-inputs"></div>
+  </section>
+
+  <!-- TRACTOR / LABOUR -->
+  <section class="section" id="sec-labour">
+    <h2 class="section-title">Tractor o Mazdoori</h2>
+    <p class="section-sub">Tractor ke kaam (jotai, katai, trolley waghera) aur mazdooron ki ujrat darj karein — total kharcha khud ban jayega.</p>
+
+    <div class="cards" style="margin-bottom:18px;">
+      <div class="card expense"><div class="label">Kul Tractor/Mazdoori Kharcha</div><div class="value" id="labour-total">Rs 0</div></div>
+      <div class="card"><div class="label">Kul Andraj</div><div class="value" id="labour-count">0</div></div>
+    </div>
+
+    <form class="entry-form" id="form-labour">
+      <div class="field"><label>Kaam / Naam</label><input type="text" name="name" placeholder="Jaise: Jotai, Katai, Trolley, Fulan Mazdoor" required></div>
+      <div class="field">
+        <label>Qisam</label>
+        <select name="type">
+          <option>Tractor Kaam</option>
+          <option>Mazdoori (Labour)</option>
+        </select>
+      </div>
+      <div class="field"><label>Fasal (agar maloom ho)</label>
+        <select name="crop" id="labour-crop-select">
+          <option value="">— Farm-wide / General —</option>
+        </select>
+      </div>
+      <div class="field"><label>Miqdar</label><input type="number" min="0" step="0.1" name="qty" required></div>
+      <div class="field">
+        <label>Unit</label>
+        <select name="unit">
+          <option>Ghanta (Hour)</option>
+          <option>Din (Day)</option>
+          <option>Ekar (Acre)</option>
+          <option>Adad</option>
+        </select>
+      </div>
+      <div class="field"><label>Fi Unit Rate (Rs)</label><input type="number" min="0" step="1" name="rate" required></div>
+      <div class="field"><label>Tareekh</label><input type="date" name="date"></div>
+      <div class="field full"><label>Note</label><input type="text" name="note" placeholder="Extra tafseel..."></div>
+      <button type="submit" class="btn">Andraj Shamil Karein</button>
+    </form>
+    <div class="ledger" id="list-labour"></div>
+  </section>
+
+  <!-- FINANCE -->
+  <section class="section" id="sec-finance">
+    <h2 class="section-title">Hisab Kitab (Amdani / Kharcha)</h2>
+    <p class="section-sub">Har lain-dain darj karein — beej, khaad, mazdoori se le kar fasal ki farokht tak.</p>
+    <form class="entry-form" id="form-finance">
+      <div class="field"><label>Tareekh</label><input type="date" name="date" required></div>
+      <div class="field">
+        <label>Qisam</label>
+        <select name="kind">
+          <option value="expense">Kharcha</option>
+          <option value="income">Amdani</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Category</label>
+        <select name="category">
+          <option>Beej</option>
+          <option>Khaad</option>
+          <option>Dawai / Sprai</option>
+          <option>Mazdoori</option>
+          <option>Diesel / Fuel</option>
+          <option>Fasal Farokht</option>
+          <option>Janwar / Doodh Farokht</option>
+          <option>Kiraya / Zameen</option>
+          <option>Digar (Other)</option>
+        </select>
+      </div>
+      <div class="field"><label>Raqam (Rs)</label><input type="number" min="0" step="1" name="amount" required></div>
+      <div class="field"><label>Fasal (agar lagu ho)</label>
+        <select name="crop" id="finance-crop-select">
+          <option value="">— Farm-wide / General —</option>
+        </select>
+      </div>
+      <div class="field full"><label>Tafseel</label><input type="text" name="note" placeholder="Jaise: 2 bora DAP khaad"></div>
+      <button type="submit" class="btn">Andraj Karein</button>
+    </form>
+    <div class="ledger" id="list-finance"></div>
+  </section>
+
+  <!-- INVENTORY -->
+  <section class="section" id="sec-inventory">
+    <h2 class="section-title">Zakheera (Inventory)</h2>
+    <p class="section-sub">Beej, khaad, dawai aur auzaron ka stock aur qeemat nazar rakhein.</p>
+    <div class="cards" style="margin-bottom:18px;">
+      <div class="card"><div class="label">Zakheera ki Kul Qeemat</div><div class="value" id="inventory-total-value">Rs 0</div></div>
+      <div class="card"><div class="label">Kul Items</div><div class="value" id="inventory-count">0</div></div>
+    </div>
+    <form class="entry-form" id="form-inventory">
+      <div class="field"><label>Cheez ka naam</label><input type="text" name="name" placeholder="Jaise: Urea Khaad" required></div>
+      <div class="field">
+        <label>Category</label>
+        <select name="category">
+          <option>Beej</option>
+          <option>Khaad</option>
+          <option>Dawai</option>
+          <option>Auzar / Tools</option>
+          <option>Anaj (Grain Store)</option>
+          <option>Digar</option>
+        </select>
+      </div>
+      <div class="field"><label>Miqdar</label><input type="number" min="0" step="0.1" name="qty" required></div>
+      <div class="field">
+        <label>Unit</label>
+        <select name="unit">
+          <option>Kg</option>
+          <option>Bora</option>
+          <option>Litre</option>
+          <option>Adad</option>
+        </select>
+      </div>
+      <div class="field"><label>Fi Unit Qeemat (Rs)</label><input type="number" min="0" step="1" name="price" placeholder="Jaise: 250"></div>
+      <div class="field"><label>Kam Stock Hadd</label><input type="number" min="0" step="0.1" name="threshold" placeholder="Jaise: 5"></div>
+      <div class="field full"><label>Note</label><input type="text" name="note" placeholder="Extra tafseel..."></div>
+      <button type="submit" class="btn">Zakheera Shamil Karein</button>
+    </form>
+    <div class="ledger" id="list-inventory"></div>
+  </section>
+
+  <!-- LIVESTOCK -->
+  <section class="section" id="sec-livestock">
+    <h2 class="section-title">Janwar (Livestock)</h2>
+    <p class="section-sub">Apne maweshi aur poultry ki sehat aur tadad ka record rakhein.</p>
+    <form class="entry-form" id="form-livestock">
+      <div class="field">
+        <label>Qisam</label>
+        <select name="type">
+          <option>Gaye</option>
+          <option>Bhains</option>
+          <option>Bakri</option>
+          <option>Bhed</option>
+          <option>Murgi / Poultry</option>
+          <option>Digar</option>
+        </select>
+      </div>
+      <div class="field"><label>Tadad</label><input type="number" min="1" step="1" name="count" value="1" required></div>
+      <div class="field">
+        <label>Sehat Halat</label>
+        <select name="health">
+          <option>Sehatmand</option>
+          <option>Zair-e-ilaj</option>
+          <option>Bimaar</option>
+        </select>
+      </div>
+      <div class="field"><label>Roz Doodh (Litre)</label><input type="number" min="0" step="0.1" name="milk" placeholder="Agar lagu ho"></div>
+      <div class="field full"><label>Note</label><input type="text" name="note" placeholder="Tag number, umar, waghera"></div>
+      <button type="submit" class="btn">Janwar Shamil Karein</button>
+    </form>
+    <div class="ledger" id="list-livestock"></div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section" id="sec-history">
+    <h2 class="section-title">Tareekh (History)</h2>
+    <p class="section-sub">Har fasal ka hisab alag alag, tareekh ke hisab se.</p>
+    <div id="history-groups"></div>
+  </section>
+
+</main>
+<footer class="note">Data sirf is browser mein mehfooz hota hai — kisi doosre device ya safai (clear data) par nahi milega.</footer>
+</div>
+<div class="toast" id="app-toast"></div>
+
+<script>
+(async function () {
+  "use strict";
+
+  // Offline build: everything lives in this one browser's localStorage.
+  // No login, no account, no cloud sync — just open the file and use it.
+  const CACHE_KEY = "muhammad_ahmad_khata_data_v1";
+
+  function defaultState() {
+    return { crops: [], inputs: [], labour: [], sales: [], finance: [], inventory: [], livestock: [] };
+  }
+
+  let state = defaultState();
+
+  function loadLocalCache() {
+    state = defaultState();
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (raw) state = Object.assign(defaultState(), JSON.parse(raw));
+    } catch (e) {
+      console.warn("Local cache load failed.", e);
+    }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.warn("Local save failed.", e);
+    }
+  }
+
+  function showToast(msg) {
+    const el = document.getElementById("app-toast");
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => el.classList.remove("show"), 2400);
+  }
+
+  function renderAll() {
+    renderCrops();
+    refreshCropSelects();
+    renderInputs();
+    renderLabour();
+    renderFinance();
+    renderInventory();
+    renderLivestock();
+    renderDashboard();
+    renderHistory();
+  }
+
+  function uid() { return Math.random().toString(36).slice(2, 10) + Date.now().toString(36); }
+
+  function fmtMoney(n) {
+    const num = Number(n) || 0;
+    return "Rs " + num.toLocaleString("en-PK", { maximumFractionDigits: 0 });
+  }
+
+  function fmtDate(d) {
+    if (!d) return "—";
+    try {
+      const dt = new Date(d + "T00:00:00");
+      return dt.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    } catch (e) { return d; }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  /* ---------- Tabs ---------- */
+  const tabButtons = document.querySelectorAll("#tabs button");
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+      document.getElementById("sec-" + btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  /* ---------- Row builder ---------- */
+  function ledgerRow({ nameHtml, metaHtml, noteHtml, amountHtml, onDelete }) {
+    const row = document.createElement("div");
+    row.className = "ledger-row";
+    row.innerHTML = `
+      <div class="main">
+        <div class="name">${nameHtml}</div>
+        ${metaHtml ? `<div class="meta">${metaHtml}</div>` : ""}
+        ${noteHtml ? `<div class="note">${noteHtml}</div>` : ""}
+      </div>
+      ${amountHtml ? `<div class="amount">${amountHtml}</div>` : ""}
+      <div class="actions"><button class="btn danger small" type="button">Hatayein</button></div>
+    `;
+    row.querySelector(".btn.danger").addEventListener("click", onDelete);
+    return row;
+  }
+
+  function emptyState(text) {
+    const div = document.createElement("div");
+    div.className = "empty-state";
+    div.textContent = text;
+    return div;
+  }
+
+  /* ---------- Date helpers for crop task planning ---------- */
+  function todayISODate() {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d.toISOString().slice(0, 10);
+  }
+  function addDaysISO(base, n) {
+    const d = new Date(base + "T00:00:00");
+    d.setDate(d.getDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
+  function daysDiffFromToday(dateStr) {
+    const today = new Date(todayISODate() + "T00:00:00");
+    const target = new Date(dateStr + "T00:00:00");
+    return Math.round((target - today) / 86400000);
+  }
+  function taskDateLabel(dateStr) {
+    if (!dateStr) return "Tareekh tay nahi";
+    const diff = daysDiffFromToday(dateStr);
+    if (diff === 0) return "Aaj";
+    if (diff === 1) return "Kal";
+    if (diff === 2) return "Parso";
+    if (diff < 0) return Math.abs(diff) + " din guzar gaye";
+    return fmtDate(dateStr);
+  }
+  function taskBadgeClass(dateStr, done) {
+    if (done || !dateStr) return "later";
+    const diff = daysDiffFromToday(dateStr);
+    if (diff < 0) return "overdue";
+    if (diff === 0) return "today";
+    if (diff <= 2) return "soon";
+    return "later";
+  }
+
+  /* ---------- Crop dropdowns (used by inputs, finance forms) ---------- */
+  function refreshCropSelects() {
+    const selects = [
+      document.getElementById("finance-crop-select"),
+      document.getElementById("input-crop-select"),
+      document.getElementById("labour-crop-select")
+    ];
+    selects.forEach(el => {
+      if (!el) return;
+      const current = el.value;
+      el.innerHTML = "";
+      el.appendChild(new Option("— Farm-wide / General —", ""));
+      state.crops.forEach(c => el.appendChild(new Option(c.name, c.name)));
+      const stillExists = Array.from(el.options).some(o => o.value === current);
+      el.value = stillExists ? current : "";
+    });
+  }
+
+  /* ---------- Print ---------- */
+  document.getElementById("btn-print").addEventListener("click", () => window.print());
+
+  /* ---------- CROPS ---------- */
+  const formCrop = document.getElementById("form-crop");
+  formCrop.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formCrop);
+    state.crops.unshift({
+      id: uid(),
+      name: fd.get("name").trim(),
+      area: fd.get("area"),
+      sowDate: fd.get("sowDate"),
+      harvestDate: fd.get("harvestDate"),
+      status: fd.get("status"),
+      note: fd.get("note").trim(),
+      tasks: []
+    });
+    saveState();
+    formCrop.reset();
+    renderCrops();
+    refreshCropSelects();
+    renderDashboard();
+    showToast("✅ Fasal shamil ho gayi: " + (state.crops[0] ? state.crops[0].name : ""));
+  });
+
+  function renderCrops() {
+    const list = document.getElementById("list-crops");
+    list.innerHTML = "";
+    if (!state.crops.length) {
+      list.appendChild(emptyState("Ab tak koi fasal darj nahi ki gayi. Upar form se pehli fasal shamil karein."));
+      return;
+    }
+    state.crops.forEach(c => {
+      if (!c.tasks) c.tasks = [];
+      const wrapper = document.createElement("div");
+      wrapper.className = "crop-block";
+
+      const meta = [
+        c.area ? c.area + " acre" : null,
+        c.sowDate ? "Bijai: " + fmtDate(c.sowDate) : null,
+        c.harvestDate ? "Katai: " + fmtDate(c.harvestDate) : null
+      ].filter(Boolean).join(" · ");
+      const row = ledgerRow({
+        nameHtml: escapeHtml(c.name) + `<span class="status-pill">${escapeHtml(c.status)}</span>`,
+        metaHtml: escapeHtml(meta),
+        noteHtml: c.note ? escapeHtml(c.note) : "",
+        onDelete: () => {
+          state.crops = state.crops.filter(x => x.id !== c.id);
+          saveState(); renderCrops(); refreshCropSelects(); renderDashboard();
+        }
+      });
+      wrapper.appendChild(row);
+      wrapper.appendChild(buildCropPlanBlock(c));
+      wrapper.appendChild(buildCropSalesBlock(c));
+      list.appendChild(wrapper);
+    });
+  }
+
+  /**
+   * Builds the "plan" mini-widget for one crop: a small form to schedule
+   * a task (khaad dalna, sprai karna, etc.) on a date, plus the list of
+   * that crop's planned tasks with a checkbox to mark done.
+   */
+  function buildCropPlanBlock(crop) {
+    const box = document.createElement("div");
+    box.className = "crop-plan";
+    box.innerHTML = `
+      <div class="crop-plan-title">📅 Is Fasal ka Plan</div>
+      <div class="crop-plan-form">
+        <input type="text" class="plan-title" placeholder="Kaam (jaise: DAP Khaad Dalna, Mancozeb Sprai)">
+        <select class="plan-type">
+          <option>Khaad</option>
+          <option>Sprai</option>
+          <option>Sinchai (Paani)</option>
+          <option>Katai</option>
+          <option>Digar</option>
+        </select>
+        <input type="date" class="plan-date">
+        <button type="button" class="btn small plan-add-btn">+ Plan Shamil Karein</button>
+      </div>
+      <div class="task-list"></div>
+    `;
+    const titleInput = box.querySelector(".plan-title");
+    const typeSelect = box.querySelector(".plan-type");
+    const dateInput = box.querySelector(".plan-date");
+    dateInput.valueAsDate = new Date();
+    const taskListEl = box.querySelector(".task-list");
+
+    function renderTaskList() {
+      taskListEl.innerHTML = "";
+      if (!crop.tasks.length) {
+        taskListEl.appendChild(emptyState("Is fasal ke liye abhi koi plan nahi bana."));
+        return;
+      }
+      crop.tasks.slice().sort((a, b) => (a.date || "").localeCompare(b.date || "")).forEach(t => {
+        const trow = document.createElement("div");
+        trow.className = "task-row" + (t.done ? " done" : "");
+        trow.innerHTML = `
+          <input type="checkbox" class="task-check" ${t.done ? "checked" : ""}>
+          <div class="task-main">
+            <strong>${escapeHtml(t.title)}</strong>
+            <span class="status-pill">${escapeHtml(t.type)}</span>
+          </div>
+          <span class="task-date-badge ${taskBadgeClass(t.date, t.done)}">${escapeHtml(taskDateLabel(t.date))}</span>
+          <button type="button" class="btn danger small task-del-btn">Hatayein</button>
+        `;
+        trow.querySelector(".task-check").addEventListener("change", e => {
+          t.done = e.target.checked;
+          saveState(); renderTaskList(); renderDashboard();
+        });
+        trow.querySelector(".task-del-btn").addEventListener("click", () => {
+          crop.tasks = crop.tasks.filter(x => x.id !== t.id);
+          saveState(); renderTaskList(); renderDashboard();
+        });
+        taskListEl.appendChild(trow);
+      });
+    }
+
+    box.querySelector(".plan-add-btn").addEventListener("click", () => {
+      const title = titleInput.value.trim();
+      if (!title) return;
+      crop.tasks.push({ id: uid(), title, type: typeSelect.value, date: dateInput.value, done: false });
+      titleInput.value = "";
+      saveState();
+      renderTaskList();
+      renderDashboard();
+      showToast("✅ Plan shamil ho gaya: " + title);
+    });
+
+    renderTaskList();
+    return box;
+  }
+
+  /**
+   * Builds the "sales" mini-widget for one crop: record how much of the
+   * crop was sold, at what rate, so the total (qty × rate) is calculated
+   * automatically and counted as this crop's income everywhere.
+   */
+  function buildCropSalesBlock(crop) {
+    const box = document.createElement("div");
+    box.className = "crop-plan";
+    box.innerHTML = `
+      <div class="crop-plan-title">💰 Is Fasal ki Farokht</div>
+      <div class="crop-plan-form">
+        <input type="number" min="0" step="0.1" class="sale-qty" placeholder="Miqdar">
+        <select class="sale-unit">
+          <option>Maund</option>
+          <option>Kg</option>
+          <option>Bora</option>
+          <option>Mann</option>
+          <option>Ton</option>
+          <option>Adad</option>
+        </select>
+        <input type="number" min="0" step="1" class="sale-rate" placeholder="Fi Unit Rate (Rs)">
+        <input type="date" class="sale-date">
+        <input type="text" class="sale-note" placeholder="Khareedar / Note (optional)">
+        <button type="button" class="btn small sale-add-btn">+ Farokht Shamil Karein</button>
+      </div>
+      <div class="sales-summary"></div>
+      <div class="sale-list"></div>
+    `;
+    const qtyInput = box.querySelector(".sale-qty");
+    const unitSelect = box.querySelector(".sale-unit");
+    const rateInput = box.querySelector(".sale-rate");
+    const dateInput = box.querySelector(".sale-date");
+    const noteInput = box.querySelector(".sale-note");
+    dateInput.valueAsDate = new Date();
+    const listEl = box.querySelector(".sale-list");
+    const summaryEl = box.querySelector(".sales-summary");
+
+    function cropSales() {
+      return state.sales.filter(s => s.crop === crop.name);
+    }
+
+    function renderSaleList() {
+      listEl.innerHTML = "";
+      const sales = cropSales().slice().sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const qtyByUnit = {};
+      let totalAmount = 0;
+      sales.forEach(s => {
+        totalAmount += s.qty * s.rate;
+        qtyByUnit[s.unit] = (qtyByUnit[s.unit] || 0) + s.qty;
+      });
+      if (sales.length) {
+        const qtySummary = Object.entries(qtyByUnit).map(([u, q]) => q + " " + u).join(", ");
+        summaryEl.textContent = "Ab tak farokht: " + qtySummary + " · Kul Amdani: " + fmtMoney(totalAmount);
+      } else {
+        summaryEl.textContent = "";
+      }
+
+      if (!sales.length) {
+        listEl.appendChild(emptyState("Is fasal ki abhi koi farokht darj nahi."));
+        return;
+      }
+      sales.forEach(s => {
+        const total = s.qty * s.rate;
+        const meta = [
+          s.qty + " " + s.unit + " × " + fmtMoney(s.rate),
+          s.date ? fmtDate(s.date) : null
+        ].filter(Boolean).join(" · ");
+        const row = ledgerRow({
+          nameHtml: "Farokht" + (s.note ? " — " + escapeHtml(s.note) : ""),
+          metaHtml: escapeHtml(meta),
+          noteHtml: "",
+          amountHtml: "+ " + fmtMoney(total),
+          onDelete: () => {
+            state.sales = state.sales.filter(x => x.id !== s.id);
+            saveState(); renderSaleList(); renderDashboard(); renderHistory();
+          }
+        });
+        const amt = row.querySelector(".amount");
+        if (amt) amt.classList.add("income");
+        listEl.appendChild(row);
+      });
+    }
+
+    box.querySelector(".sale-add-btn").addEventListener("click", () => {
+      const qty = Number(qtyInput.value) || 0;
+      const rate = Number(rateInput.value) || 0;
+      if (!qty || !rate) return;
+      state.sales.push({
+        id: uid(), crop: crop.name, qty, unit: unitSelect.value,
+        rate, date: dateInput.value, note: noteInput.value.trim()
+      });
+      qtyInput.value = ""; rateInput.value = ""; noteInput.value = "";
+      saveState();
+      renderSaleList();
+      renderDashboard();
+      renderHistory();
+      showToast("✅ Farokht darj ho gayi: " + fmtMoney(qty * rate));
+    });
+
+    renderSaleList();
+    return box;
+  }
+
+  /**
+   * Pulls every not-done task across all crops whose date is today,
+   * overdue, or within the next 2 days — for the Dashboard widget.
+   */
+  function collectUpcomingTasks() {
+    const limit = addDaysISO(todayISODate(), 2);
+    const items = [];
+    state.crops.forEach(c => {
+      (c.tasks || []).forEach(t => {
+        if (t.done || !t.date) return;
+        if (t.date <= limit) items.push(Object.assign({ cropId: c.id, cropName: c.name }, t));
+      });
+    });
+    items.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    return items;
+  }
+
+  function renderUpcomingTasks() {
+    const box = document.getElementById("db-upcoming-tasks");
+    box.innerHTML = "";
+    const items = collectUpcomingTasks();
+    if (!items.length) {
+      box.appendChild(emptyState("Agle 2 din mein koi kaam planned nahi hai. 'Fasal' tab mein har fasal ke liye plan bana sakte hain."));
+      return;
+    }
+    items.forEach(t => {
+      const row = document.createElement("div");
+      row.className = "task-row";
+      row.innerHTML = `
+        <div class="task-main">
+          <strong>${escapeHtml(t.cropName)}</strong> — ${escapeHtml(t.title)}
+          <span class="status-pill">${escapeHtml(t.type)}</span>
+        </div>
+        <span class="task-date-badge ${taskBadgeClass(t.date, false)}">${escapeHtml(taskDateLabel(t.date))}</span>
+        <button type="button" class="btn ghost small task-done-btn">✅ Ho Gaya</button>
+      `;
+      row.querySelector(".task-done-btn").addEventListener("click", () => {
+        const crop = state.crops.find(c => c.id === t.cropId);
+        const task = crop && (crop.tasks || []).find(x => x.id === t.id);
+        if (task) task.done = true;
+        saveState();
+        renderDashboard();
+        renderCrops();
+      });
+      box.appendChild(row);
+    });
+  }
+
+  /* ---------- FERTILIZER / NUTRIENT / SPRAY (INPUTS) ---------- */
+  const formInput = document.getElementById("form-input");
+  document.querySelector('#form-input [name="date"]').valueAsDate = new Date();
+  formInput.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formInput);
+    state.inputs.unshift({
+      id: uid(),
+      name: fd.get("name").trim(),
+      type: fd.get("type"),
+      crop: fd.get("crop").trim(),
+      qty: Number(fd.get("qty")) || 0,
+      unit: fd.get("unit"),
+      price: Number(fd.get("price")) || 0,
+      date: fd.get("date"),
+      note: fd.get("note").trim()
+    });
+    saveState();
+    formInput.reset();
+    document.querySelector('#form-input [name="date"]').valueAsDate = new Date();
+    renderInputs();
+    renderDashboard();
+    renderHistory();
+    showToast("✅ Andraj shamil ho gaya: " + (state.inputs[0] ? state.inputs[0].name : ""));
+  });
+
+  function inputsTotal() {
+    return state.inputs.reduce((s, i) => s + (i.qty * i.price), 0);
+  }
+
+  /**
+   * Renders a list of expense-only entries (Khaad/Sprai, Tractor/Mazdoori)
+   * grouped into a separate block per crop (plus a Farm-wide/General block),
+   * each showing this section's subtotal for that crop AND the crop's
+   * overall net profit (pulling in every category, same as the Dashboard).
+   */
+  function renderGroupedExpenseList(containerId, items, opts) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+    const cropNames = state.crops.map(c => c.name);
+    const groups = cropNames.concat([""]); // "" = Farm-wide / General, shown last
+
+    if (!items.length && !cropNames.length) {
+      container.appendChild(emptyState(opts.emptyAllText));
+      return;
+    }
+
+    const munafaByCrop = {};
+    cropSummaries().forEach(s => { munafaByCrop[s.name] = s.income - s.expense; });
+
+    groups.forEach(cropName => {
+      const groupItems = items.filter(it => (it.crop || "") === cropName);
+      const label = cropName || "Farm-wide / General";
+      const sectionTotal = groupItems.reduce((s, it) => s + opts.amount(it), 0);
+      const hasMunafa = cropName && Object.prototype.hasOwnProperty.call(munafaByCrop, cropName);
+      const munafaVal = hasMunafa ? munafaByCrop[cropName] : null;
+
+      const group = document.createElement("div");
+      group.className = "history-group";
+      group.innerHTML = `
+        <div class="history-group-head">
+          <div class="crop-name">${escapeHtml(label)}</div>
+          <div class="crop-totals">
+            <span class="k">${opts.sectionLabel}: ${fmtMoney(sectionTotal)}</span>
+            ${hasMunafa ? `<span style="color:${munafaVal >= 0 ? "var(--forest-2)" : "var(--brick)"}">Fasal ka Munafa: ${fmtMoney(munafaVal)}</span>` : ""}
+          </div>
+        </div>
+        <div class="history-group-body"></div>
+      `;
+      const body = group.querySelector(".history-group-body");
+      if (!groupItems.length) {
+        body.appendChild(emptyState("Is fasal ke liye abhi koi andraj nahi."));
+      } else {
+        groupItems.forEach(it => body.appendChild(opts.renderRow(it)));
+      }
+      container.appendChild(group);
+    });
+  }
+
+  function renderInputs() {
+    document.getElementById("inputs-total").textContent = fmtMoney(inputsTotal());
+    document.getElementById("inputs-count").textContent = state.inputs.length;
+    renderGroupedExpenseList("list-inputs", state.inputs, {
+      sectionLabel: "Khaad/Sprai Kharcha",
+      emptyAllText: "Ab tak koi khaad, nutrient ya sprai darj nahi. Upar form se pehla andraj karein.",
+      amount: i => i.qty * i.price,
+      renderRow: i => {
+        const total = i.qty * i.price;
+        const meta = [
+          i.qty + " " + i.unit + " × " + fmtMoney(i.price),
+          i.date ? fmtDate(i.date) : null
+        ].filter(Boolean).join(" · ");
+        const row = ledgerRow({
+          nameHtml: escapeHtml(i.name) + `<span class="status-pill">${escapeHtml(i.type)}</span>`,
+          metaHtml: escapeHtml(meta),
+          noteHtml: i.note ? escapeHtml(i.note) : "",
+          amountHtml: fmtMoney(total),
+          onDelete: () => {
+            state.inputs = state.inputs.filter(x => x.id !== i.id);
+            saveState(); renderInputs(); renderDashboard(); renderHistory();
+          }
+        });
+        const amt = row.querySelector(".amount");
+        if (amt) amt.classList.add("expense");
+        return row;
+      }
+    });
+  }
+
+  /* ---------- TRACTOR / LABOUR ---------- */
+  const formLabour = document.getElementById("form-labour");
+  document.querySelector('#form-labour [name="date"]').valueAsDate = new Date();
+  formLabour.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formLabour);
+    state.labour.unshift({
+      id: uid(),
+      name: fd.get("name").trim(),
+      type: fd.get("type"),
+      crop: fd.get("crop").trim(),
+      qty: Number(fd.get("qty")) || 0,
+      unit: fd.get("unit"),
+      rate: Number(fd.get("rate")) || 0,
+      date: fd.get("date"),
+      note: fd.get("note").trim()
+    });
+    saveState();
+    formLabour.reset();
+    document.querySelector('#form-labour [name="date"]').valueAsDate = new Date();
+    renderLabour();
+    renderDashboard();
+    renderHistory();
+    showToast("✅ Andraj shamil ho gaya: " + (state.labour[0] ? state.labour[0].name : ""));
+  });
+
+  function labourTotal() {
+    return state.labour.reduce((s, i) => s + (i.qty * i.rate), 0);
+  }
+
+  function renderLabour() {
+    document.getElementById("labour-total").textContent = fmtMoney(labourTotal());
+    document.getElementById("labour-count").textContent = state.labour.length;
+    renderGroupedExpenseList("list-labour", state.labour, {
+      sectionLabel: "Tractor/Mazdoori Kharcha",
+      emptyAllText: "Ab tak tractor ya mazdoori ka koi andraj nahi. Upar form se pehla andraj karein.",
+      amount: i => i.qty * i.rate,
+      renderRow: i => {
+        const total = i.qty * i.rate;
+        const meta = [
+          i.qty + " " + i.unit + " × " + fmtMoney(i.rate),
+          i.date ? fmtDate(i.date) : null
+        ].filter(Boolean).join(" · ");
+        const row = ledgerRow({
+          nameHtml: escapeHtml(i.name) + `<span class="status-pill">${escapeHtml(i.type)}</span>`,
+          metaHtml: escapeHtml(meta),
+          noteHtml: i.note ? escapeHtml(i.note) : "",
+          amountHtml: fmtMoney(total),
+          onDelete: () => {
+            state.labour = state.labour.filter(x => x.id !== i.id);
+            saveState(); renderLabour(); renderDashboard(); renderHistory();
+          }
+        });
+        const amt = row.querySelector(".amount");
+        if (amt) amt.classList.add("expense");
+        return row;
+      }
+    });
+  }
+  const formFinance = document.getElementById("form-finance");
+  document.querySelector('#form-finance [name="date"]').valueAsDate = new Date();
+  formFinance.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formFinance);
+    state.finance.unshift({
+      id: uid(),
+      date: fd.get("date"),
+      kind: fd.get("kind"),
+      category: fd.get("category"),
+      amount: Number(fd.get("amount")) || 0,
+      crop: fd.get("crop") || "",
+      note: fd.get("note").trim()
+    });
+    saveState();
+    formFinance.reset();
+    document.querySelector('#form-finance [name="date"]').valueAsDate = new Date();
+    renderFinance();
+    renderDashboard();
+    renderHistory();
+    const added = state.finance[0];
+    showToast((added && added.kind === "income" ? "✅ Amdani darj ho gayi: " : "✅ Kharcha darj ho gaya: ") + (added ? fmtMoney(added.amount) : ""));
+  });
+
+  function renderFinance() {
+    const list = document.getElementById("list-finance");
+    list.innerHTML = "";
+    if (!state.finance.length) {
+      list.appendChild(emptyState("Ab tak koi lain-dain darj nahi hua. Upar form se pehla andraj karein."));
+      return;
+    }
+    state.finance.forEach(t => {
+      const meta = [fmtDate(t.date), t.crop ? "Fasal: " + t.crop : null].filter(Boolean).join(" · ");
+      const row = ledgerRow({
+        nameHtml: escapeHtml(t.category),
+        metaHtml: escapeHtml(meta),
+        noteHtml: t.note ? escapeHtml(t.note) : "",
+        amountHtml: (t.kind === "income" ? "+ " : "− ") + fmtMoney(t.amount),
+        onDelete: () => {
+          state.finance = state.finance.filter(x => x.id !== t.id);
+          saveState(); renderFinance(); renderDashboard(); renderHistory();
+        }
+      });
+      const amt = row.querySelector(".amount");
+      if (amt) amt.classList.add(t.kind === "income" ? "income" : "expense");
+      list.appendChild(row);
+    });
+  }
+
+  /* ---------- INVENTORY ---------- */
+  const formInventory = document.getElementById("form-inventory");
+  formInventory.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formInventory);
+    state.inventory.unshift({
+      id: uid(),
+      name: fd.get("name").trim(),
+      category: fd.get("category"),
+      qty: Number(fd.get("qty")) || 0,
+      unit: fd.get("unit"),
+      price: fd.get("price") ? Number(fd.get("price")) : 0,
+      threshold: fd.get("threshold") ? Number(fd.get("threshold")) : null,
+      note: fd.get("note").trim()
+    });
+    saveState();
+    formInventory.reset();
+    renderInventory();
+    renderDashboard();
+    showToast("✅ Zakheera mein shamil ho gaya: " + (state.inventory[0] ? state.inventory[0].name : ""));
+  });
+
+  function inventoryTotalValue() {
+    return state.inventory.reduce((s, i) => s + (i.qty * (i.price || 0)), 0);
+  }
+
+  function renderInventory() {
+    const list = document.getElementById("list-inventory");
+    list.innerHTML = "";
+    document.getElementById("inventory-total-value").textContent = fmtMoney(inventoryTotalValue());
+    document.getElementById("inventory-count").textContent = state.inventory.length;
+    if (!state.inventory.length) {
+      list.appendChild(emptyState("Zakheera mein abhi koi cheez darj nahi. Upar form se shamil karein."));
+      return;
+    }
+    state.inventory.forEach(i => {
+      const low = i.threshold != null && i.qty <= i.threshold;
+      const value = i.qty * (i.price || 0);
+      const meta = [
+        i.qty + " " + i.unit,
+        i.price ? "@ " + fmtMoney(i.price) + "/" + i.unit : null,
+        i.threshold != null ? "Hadd: " + i.threshold + " " + i.unit : null
+      ].filter(Boolean).join(" · ");
+      const row = ledgerRow({
+        nameHtml: escapeHtml(i.name) + `<span class="status-pill">${escapeHtml(i.category)}</span>` + (low ? `<span class="status-pill" style="background:var(--brick-soft); color:var(--brick);">Kam Stock</span>` : ""),
+        metaHtml: escapeHtml(meta),
+        noteHtml: i.note ? escapeHtml(i.note) : "",
+        amountHtml: i.price ? fmtMoney(value) : "",
+        onDelete: () => {
+          state.inventory = state.inventory.filter(x => x.id !== i.id);
+          saveState(); renderInventory(); renderDashboard();
+        }
+      });
+      list.appendChild(row);
+    });
+  }
+
+  /* ---------- LIVESTOCK ---------- */
+  const formLivestock = document.getElementById("form-livestock");
+  formLivestock.addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(formLivestock);
+    state.livestock.unshift({
+      id: uid(),
+      type: fd.get("type"),
+      count: Number(fd.get("count")) || 1,
+      health: fd.get("health"),
+      milk: fd.get("milk") ? Number(fd.get("milk")) : null,
+      note: fd.get("note").trim()
+    });
+    saveState();
+    formLivestock.reset();
+    renderLivestock();
+    renderDashboard();
+    showToast("✅ Janwar shamil ho gaye: " + (state.livestock[0] ? state.livestock[0].type : ""));
+  });
+
+  function renderLivestock() {
+    const list = document.getElementById("list-livestock");
+    list.innerHTML = "";
+    if (!state.livestock.length) {
+      list.appendChild(emptyState("Abhi koi janwar darj nahi. Upar form se shamil karein."));
+      return;
+    }
+    state.livestock.forEach(a => {
+      const meta = [
+        a.count + " adad",
+        a.milk ? a.milk + " litre doodh/din" : null
+      ].filter(Boolean).join(" · ");
+      const row = ledgerRow({
+        nameHtml: escapeHtml(a.type) + `<span class="status-pill">${escapeHtml(a.health)}</span>`,
+        metaHtml: escapeHtml(meta),
+        noteHtml: a.note ? escapeHtml(a.note) : "",
+        onDelete: () => {
+          state.livestock = state.livestock.filter(x => x.id !== a.id);
+          saveState(); renderLivestock(); renderDashboard();
+        }
+      });
+      list.appendChild(row);
+    });
+  }
+
+  /* ---------- DASHBOARD ---------- */
+  function salesTotal() {
+    return state.sales.reduce((s, x) => s + (x.qty * x.rate), 0);
+  }
+
+  function renderDashboard() {
+    const financeIncome = state.finance.filter(t => t.kind === "income").reduce((s, t) => s + t.amount, 0);
+    const income = financeIncome + salesTotal();
+    const financeExpense = state.finance.filter(t => t.kind === "expense").reduce((s, t) => s + t.amount, 0);
+    const inputsExpense = inputsTotal();
+    const labourExpense = labourTotal();
+    const expense = financeExpense + inputsExpense + labourExpense;
+    const profit = income - expense;
+
+    document.getElementById("db-income").textContent = fmtMoney(income);
+    document.getElementById("db-expense").textContent = fmtMoney(expense);
+    const profitEl = document.getElementById("db-profit");
+    profitEl.textContent = fmtMoney(profit);
+    profitEl.classList.remove("pos", "neg");
+    profitEl.classList.add(profit >= 0 ? "pos" : "neg");
+
+    const activeCrops = state.crops.filter(c => c.status !== "Kat li gayi").length;
+    document.getElementById("db-crops").textContent = activeCrops;
+    document.getElementById("db-livestock").textContent = state.livestock.reduce((s, a) => s + a.count, 0);
+    document.getElementById("db-inventory").textContent = state.inventory.length;
+
+    const lowStockBox = document.getElementById("db-lowstock");
+    lowStockBox.innerHTML = "";
+    const low = state.inventory.filter(i => i.threshold != null && i.qty <= i.threshold);
+    if (!low.length) {
+      lowStockBox.appendChild(emptyState("Filhaal koi cheez kam stock mein nahi."));
+    } else {
+      low.forEach(i => {
+        const row = document.createElement("div");
+        row.className = "alert-row";
+        row.innerHTML = `<span>${escapeHtml(i.name)}</span><span class="qty">${i.qty} ${escapeHtml(i.unit)} baaqi</span>`;
+        lowStockBox.appendChild(row);
+      });
+    }
+
+    const recentBox = document.getElementById("db-recent");
+    recentBox.innerHTML = "";
+    const recentAll = allCombinedEntries()
+      .slice()
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+      .slice(0, 5);
+    if (!recentAll.length) {
+      recentBox.appendChild(emptyState("Abhi koi andraj nahi hua."));
+    } else {
+      recentAll.forEach(t => {
+        const row = document.createElement("div");
+        row.className = "ledger-row";
+        row.innerHTML = `
+          <div class="main">
+            <div class="name">${escapeHtml(t.title)}<span class="status-pill">${escapeHtml(t.tag)}</span></div>
+            <div class="meta">${fmtDate(t.date)}${t.note ? " · " + escapeHtml(t.note) : ""}</div>
+          </div>
+          <div class="amount ${t.kind === "income" ? "income" : "expense"}">${(t.kind === "income" ? "+ " : "− ") + fmtMoney(t.amount)}</div>
+        `;
+        recentBox.appendChild(row);
+      });
+    }
+
+    renderCropSummary();
+    renderUpcomingTasks();
+  }
+
+  function cropSummaries() {
+    const map = {};
+    state.crops.forEach(c => { map[c.name] = { name: c.name, expense: 0, income: 0 }; });
+    state.finance.forEach(t => {
+      if (t.crop && map[t.crop]) {
+        if (t.kind === "income") map[t.crop].income += t.amount;
+        else map[t.crop].expense += t.amount;
+      }
+    });
+    state.inputs.forEach(i => {
+      if (i.crop && map[i.crop]) {
+        map[i.crop].expense += i.qty * i.price;
+      }
+    });
+    state.labour.forEach(i => {
+      if (i.crop && map[i.crop]) {
+        map[i.crop].expense += i.qty * i.rate;
+      }
+    });
+    state.sales.forEach(s => {
+      if (s.crop && map[s.crop]) {
+        map[s.crop].income += s.qty * s.rate;
+      }
+    });
+    return Object.values(map);
+  }
+
+  function renderCropSummary() {
+    const box = document.getElementById("db-crop-summary");
+    box.innerHTML = "";
+    const summaries = cropSummaries();
+    if (!summaries.length) {
+      box.appendChild(emptyState("Pehle 'Fasal' tab mein fasal shamil karein, phir yahan har fasal ka alag kharcha aur munafa nazar aayega."));
+      return;
+    }
+    const table = document.createElement("table");
+    table.className = "crop-summary-table";
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Fasal</th>
+          <th class="num">Kharcha</th>
+          <th class="num">Amdani</th>
+          <th class="num">Munafa</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${summaries.map(s => {
+          const profit = s.income - s.expense;
+          return `<tr>
+            <td>${escapeHtml(s.name)}</td>
+            <td class="num">${fmtMoney(s.expense)}</td>
+            <td class="num">${fmtMoney(s.income)}</td>
+            <td class="num ${profit >= 0 ? "profit-pos" : "profit-neg"}">${fmtMoney(profit)}</td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    `;
+    box.appendChild(table);
+  }
+
+  /* ---------- HISTORY (grouped, separate per crop) ---------- */
+  function allCombinedEntries() {
+    return [
+      ...state.finance.map(t => ({
+        date: t.date, kind: t.kind, crop: t.crop || "",
+        title: t.category, note: t.note, qty: null, unit: "",
+        amount: t.amount, tag: t.kind === "income" ? "Amdani" : "Kharcha"
+      })),
+      ...state.inputs.map(i => ({
+        date: i.date, kind: "expense", crop: i.crop || "",
+        title: i.name, note: i.note, qty: i.qty, unit: i.unit,
+        amount: i.qty * i.price, tag: i.type
+      })),
+      ...state.labour.map(i => ({
+        date: i.date, kind: "expense", crop: i.crop || "",
+        title: i.name, note: i.note, qty: i.qty, unit: i.unit,
+        amount: i.qty * i.rate, tag: i.type
+      })),
+      ...state.sales.map(s => ({
+        date: s.date, kind: "income", crop: s.crop || "",
+        title: "Farokht", note: s.note, qty: s.qty, unit: s.unit,
+        amount: s.qty * s.rate, tag: "Farokht"
+      }))
+    ];
+  }
+
+  function buildHistoryGroup(name, items) {
+    items = items.slice().sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    const kharcha = items.filter(x => x.kind === "expense").reduce((s, x) => s + x.amount, 0);
+    const amdani = items.filter(x => x.kind === "income").reduce((s, x) => s + x.amount, 0);
+
+    const group = document.createElement("div");
+    group.className = "history-group";
+    group.innerHTML = `
+      <div class="history-group-head">
+        <div class="crop-name">${escapeHtml(name)}</div>
+        <div class="crop-totals">
+          <span class="k">Kharcha: ${fmtMoney(kharcha)}</span>
+          <span class="a">Amdani: ${fmtMoney(amdani)}</span>
+          <span>Munafa: ${fmtMoney(amdani - kharcha)}</span>
+        </div>
+      </div>
+      <div class="history-group-body"></div>
+    `;
+    const body = group.querySelector(".history-group-body");
+    if (!items.length) {
+      body.appendChild(emptyState("Is fasal ke liye abhi koi hisab darj nahi."));
+    } else {
+      const scrollWrap = document.createElement("div");
+      scrollWrap.className = "table-scroll";
+      const table = document.createElement("table");
+      table.className = "crop-summary-table history-table";
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Tareekh</th>
+            <th>Tafseel</th>
+            <th>Miqdar</th>
+            <th>Qisam</th>
+            <th class="num">Raqam</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${items.map(x => `
+            <tr>
+              <td>${fmtDate(x.date)}</td>
+              <td>${escapeHtml(x.title)}${x.note ? `<div class="note">${escapeHtml(x.note)}</div>` : ""}</td>
+              <td>${x.qty != null ? escapeHtml(x.qty + " " + x.unit) : "—"}</td>
+              <td><span class="status-pill">${escapeHtml(x.tag)}</span></td>
+              <td class="num ${x.kind === "income" ? "profit-pos" : "profit-neg"}">${(x.kind === "income" ? "+ " : "− ") + fmtMoney(x.amount)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      `;
+      scrollWrap.appendChild(table);
+      body.appendChild(scrollWrap);
+    }
+    return group;
+  }
+
+  function renderHistory() {
+    const container = document.getElementById("history-groups");
+    container.innerHTML = "";
+    const combined = allCombinedEntries();
+
+    if (!state.crops.length && !combined.length) {
+      container.appendChild(emptyState("Abhi koi fasal ya hisab darj nahi. Fasal aur andraj shamil karne ke baad yahan har fasal ki alag history nazar aayegi."));
+      return;
+    }
+
+    state.crops.forEach(c => {
+      const items = combined.filter(x => x.crop === c.name);
+      container.appendChild(buildHistoryGroup(c.name, items));
+    });
+
+    const generalItems = combined.filter(x => !x.crop);
+    container.appendChild(buildHistoryGroup("Farm-wide / General", generalItems));
+  }
+
+  /* ---------- Init ---------- */
+  (function init() {
+    loadLocalCache();
+    renderAll();
+  })();
+})();
+</script>
+
+<script>
+  // Registers the service worker so the app can be "installed" from the
+  // browser (Add to Home Screen / Install App) and keeps working offline
+  // once installed. Silently does nothing if the browser doesn't support it
+  // or the file was opened directly (file://) instead of served over http(s).
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(err => console.warn("SW register failed:", err));
+    });
+  }
+</script>
+
+</body>
+</html>
